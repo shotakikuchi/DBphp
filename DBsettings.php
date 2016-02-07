@@ -3,10 +3,10 @@
     define("_DEBUG_MODE",false);
 
     //データベース接続ユーザー名
-    define("_DB_USER","root");
+    define("_DB_USER","sample");
 
     //データベース接続パスワード
-    define("_DB_PASS","228110");
+    define("_DB_PASS","password");
 
     //データベースホスト名
     define("_DB_HOST","localhost");
