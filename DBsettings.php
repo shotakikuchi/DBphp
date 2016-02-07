@@ -9,7 +9,7 @@
     define("_DB_PASS","password");
 
     //データベースホスト名
-    define("_DB_HOST","localhost");
+    define("_DB_HOST","127.0.0.1");
 
     //データベース名
     define("_DB_NAME","sampledb");
@@ -20,4 +20,5 @@
     //データソースネーム
     define("_DSN",_DB_TYPE .":host="._DB_HOST .";dbname=". _DB_NAME.";charset=utf8");
     // "_DSN" -> "mysql:host=localhost;dbname=sampledb;charset=utf8"
+    //// "_DSN" -> "mysql:host=127.0.0.1;dbname=sampledb;charset=utf8"
 ?>
