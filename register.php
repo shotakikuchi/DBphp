@@ -1,48 +1,7 @@
 <?php
-
-session_start();
-
-//リダイレクト処理関数。
-function redirect(){
-    header('Location:'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
-}
-
-if($_SERVER['REQUEST_METHOD'] === "POST"){
-
-//ポストの値が二つともセットされてたら
-if(isset($_POST["username"]) && isset($_POST['password']) && isset($_POST['birthday'])){
-
-//サーバー接続処理
-try{
-$dbh = new PDO("mysql:host=127.0.0.1;dbname=sampledb","sample","password");
-    echo "db Success!";
-}catch(PDOException $e){
-var_dump($e->getMessage());
-exit;
-}
-
-//データベースに入力内容を挿入するためのSQL文
-$sql = "insert into member (username,password,birthday,reg_date) values ('{$_POST['username']}','{$_POST['password']}','{$_POST['birthday']}',now())";
-$stmt = $dbh->prepare($sql);
-
-//SQL準備
-$stmt->execute();
-echo "success!";
-
-//SQL実行
-//fetch(PDO::ASSOC) 上から一つを連想配列として返す。
-$_SESSION['user'] = $stmt->fetch(PDO::FETCH_ASSOC);
-
-//chat.phpへ
-header('Location: ./chat.php');
-exit;
-}//ここまでがメソッドがポストだった時の処理
-
-//値が入ってなかった時
-if(empty($_POST['username']) || empty($_POST['password']) || empty($_POST['birthday'])){
-echo "値を入力してください。";
-}
-}
+require_once ("registerController.php");
+$registerController = new RegisterController();
+$registerController->register();
 
 ?>
 <!DOCTYPE html>
@@ -78,7 +37,7 @@ echo "値を入力してください。";
 <!--登録フォーム-->
 
 <!--ログイン画面へのリンク-->
-<a href="login.php">ログイン画面へ</a>
+<a href="login_backup.php">ログイン画面へ</a>
 <!--ログイン画面へのリンク-->
 </div>
 </body>

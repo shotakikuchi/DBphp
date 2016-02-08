@@ -20,5 +20,5 @@
     //データソースネーム
     define("_DSN",_DB_TYPE .":host="._DB_HOST .";dbname=". _DB_NAME.";charset=utf8");
     // "_DSN" -> "mysql:host=localhost;dbname=sampledb;charset=utf8"
-    //// "_DSN" -> "mysql:host=127.0.0.1;dbname=sampledb;charset=utf8"
+    // "_DSN" -> "mysql:host=127.0.0.1;dbname=sampledb;charset=utf8"
 ?>
