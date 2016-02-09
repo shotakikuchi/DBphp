@@ -7,11 +7,11 @@
  * Time: 21:59
  */
 require_once ("BaseController.php");
-class RegisterController extends BaseController
+class RegisterMember extends BaseController
 {
     private $sql;
     private $stmt;
-    private $choose;
+    private $select;
     private $result;
 
     public function register(){
@@ -29,9 +29,9 @@ class RegisterController extends BaseController
             echo "success!";
 
             //データベースから入力フォームに入力された名前とパスワードを取ってくるためのSQL文
-            $this->choose = "select username,password,id from member where username='{$_POST['username']}' and password='{$_POST['password']}'";
+            $this->select = "select username,password,id from member where username='{$_POST['username']}' and password='{$_POST['password']}'";
             //SQL準備
-            $this->stmt = $this->dbh->prepare($this->choose);
+            $this->stmt = $this->dbh->prepare($this->select);
 
             //SQL実行
             $this->stmt->execute();

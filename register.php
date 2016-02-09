@@ -1,7 +1,7 @@
 <?php
-require_once ("registerController.php");
-$registerController = new RegisterController();
-$registerController->register();
+require_once("registerMember.php");
+$registerMember = new RegisterMember();
+$registerMember->register();
 
 ?>
 <!DOCTYPE html>
@@ -37,7 +37,7 @@ $registerController->register();
 <!--登録フォーム-->
 
 <!--ログイン画面へのリンク-->
-<a href="login_backup.php">ログイン画面へ</a>
+<a href="login.php">ログイン画面へ</a>
 <!--ログイン画面へのリンク-->
 </div>
 </body>

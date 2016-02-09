@@ -1,8 +1,8 @@
 <?php
 
-    require_once ("messageRegist.php");
-    $messageRegist = new messageRegist();
-    $result = $messageRegist->regist();
+    require_once("registerMessage.php");
+    $registerMessage = new RegisterMessage();
+    $result = $registerMessage->regist();
 ?>
 
 <!DOCTYPE html>
@@ -55,8 +55,8 @@ font-size:60px;
 <!--青年の主張を表示-->
 <?php
 foreach($result as $v){?>
-<h1><?php echo $messageRegist->h($v['username'] .'さん'); ?></h1>
-<p><?php echo $messageRegist->h($v['message']); ?></p>
+<h1><?php echo $registerMessage->h($v['username'] .'さん'); ?></h1>
+<p><?php echo $registerMessage->h($v['message']); ?></p>
 <?php  }
 ?>
 <!--青年の主張を表示-->

@@ -7,14 +7,13 @@
  * Time: 22:17
  */
 require_once ("BaseController.php");
-class messageRegist extends BaseController
+class RegisterMessage extends BaseController
 {
     private $insert;
     private $dtmt;
     private $select;
     private $dtmt_2;
     private $alert = "";
-    private $Exception;
 
     public function regist(){
         //create table new_users(id int auto_increment primary key not null,name varchar(255),message varchar(255),created datetime);

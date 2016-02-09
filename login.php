@@ -1,7 +1,7 @@
 <?php
-require_once ("CheckMembersController.php");
-$CheckMembersController = new CheckMembersController();
-$CheckMembersController->checkMember();
+require_once("CheckMember.php");
+$checkMember = new CheckMember();
+$checkMember->check();
 ?>
 <!doctype html>
 <html lang="ja">
